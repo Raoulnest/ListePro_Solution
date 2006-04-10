@@ -16,7 +16,7 @@ class SolutionsController extends Controller
         //function pour ajouter des donnees dans la table solution 
         public function ajoutSolutions(Request $request){
 
-        $request->validate([
+       /* $request->validate([
             "description"=>"required",
             "respo_id"=>"required",
             "types_id"=>"required",
@@ -28,8 +28,9 @@ class SolutionsController extends Controller
         $solutions->save();
         //session()->flash('message', 'Ajout avec succees');    
         return response()->json(['message' => 'Solutions Added Successfully'], 200);
-        //$sol = Solutions::create($request->all());
-       // return response($sol);
+        */
+        $sol = Solutions::create($request->all());
+        return response($sol);
     }
     //Declarations des variables 
     public $titre, $desription, $agent_id, $types_id;
@@ -42,7 +43,7 @@ class SolutionsController extends Controller
         return $sol;
     }
     //function pour mettre a jour la table solution
-    public function misAjourSolutions(Request $request){
+    public function misAjourSolutions(Request $request,$id){
 
         $sol = Solutions::find($id);
         if (is_null($sol)) {

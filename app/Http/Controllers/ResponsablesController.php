@@ -15,7 +15,7 @@ class ResponsablesController extends Controller
     //function pour ajouter des donnees dans la table Responsables 
     public function ajoutAgents(Request $request){
         //validation
-        $request->validate([
+       /* $request->validate([
             "nom"=>"required",
             "codeIn"=>"required",
         ]);
@@ -24,9 +24,9 @@ class ResponsablesController extends Controller
         $ag->codeIn =$request->codeIn;
         $ag->save();
         //session()->flash('message', 'Ajout avec succees');    
-        return response()->json(['message' => 'New responsable Added Successfully'], 200);
-        //$ag = Responsables::create($request->all());
-        //return response($ag,201);
+        return response()->json(['message' => 'New responsable Added Successfully'], 200);*/
+        $ag = Responsables::create($request->all());
+        return response($ag,201);
     }
     // function pour mettre a jour la table Agents_respo
     public function misAjourAgents(Request $request){

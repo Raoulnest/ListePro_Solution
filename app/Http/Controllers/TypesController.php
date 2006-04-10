@@ -16,7 +16,7 @@ class TypesController extends Controller
     public function ajoutTypes(Request $request){
 
         //validation
-        $request->validate([
+       /* $request->validate([
             "libelle"=>"required",
         ]);
 
@@ -26,8 +26,9 @@ class TypesController extends Controller
         $tp->libelle =$request->libelle;
         $tp->save();   
         return response()->json(['message' => 'Types Added Successfully'], 200);
-        //$tp = Types::create($request->all());
-        //return response($tp,201);
+        */
+        $tp = Types::create($request->all());
+        return response($tp,201);
     }
     // function pour mettre a jour la table types
     public function misAjourTypes(Request $request){

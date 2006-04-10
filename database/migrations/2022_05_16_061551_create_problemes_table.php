@@ -16,7 +16,7 @@ class CreateProblemesTable extends Migration
         Schema::create('problemes', function (Blueprint $table) {
             $table->id();
             $table->text('description',100);
-            $table->foreignId('solution_id')->constrained('solutions');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('types_id')->constrained('types');
             $table->timestamps();
         });
