@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSolutionsTable extends Migration
+class CreateResponsablesResponsablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateSolutionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('solutions', function (Blueprint $table) {
+        Schema::create('responsables_responsables', function (Blueprint $table) {
             $table->id();
-            $table->text('description',100);
-            $table->foreignId('respo_id')->constrained('responsables');
-            $table->foreignId('types_id')->constrained('types');
+            $table->string('nom',50);
+            $table->bigInteger('codeIn');
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +28,6 @@ class CreateSolutionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solutions');
+        Schema::dropIfExists('responsables_responsables');
     }
 }
