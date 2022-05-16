@@ -15,7 +15,11 @@ class CreateSolutionsTable extends Migration
     {
         Schema::create('solutions', function (Blueprint $table) {
             $table->id();
+            $table->text('description',100);
+            $table->foreignId('respo_id')->constrained('responsables');
+            $table->foreignId('types_id')->constrained('types');
             $table->timestamps();
+
         });
     }
 

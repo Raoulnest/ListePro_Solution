@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Responsables extends Model
 {
     use HasFactory;
+    protected $table = 'responsables';
+    protected $fillable = [
+        'nom',
+        'codeIn',
+    ];
 }

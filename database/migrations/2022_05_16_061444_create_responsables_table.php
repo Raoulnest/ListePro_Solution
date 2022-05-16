@@ -15,6 +15,8 @@ class CreateResponsablesTable extends Migration
     {
         Schema::create('responsables', function (Blueprint $table) {
             $table->id();
+            $table->string('nom',50);
+            $table->bigInteger('codeIn');
             $table->timestamps();
         });
     }
