@@ -22,7 +22,6 @@ class SolutionsController extends Controller
             "types_id"=>"required",
         ]);
         $solutions = new Solutions;
-        $solutions->titre = $request->titre;
         $solutions->description = $request->description;
         $solutions->respo_id =$request->respo_id;
         $solutions->types_id =$request->types_id;

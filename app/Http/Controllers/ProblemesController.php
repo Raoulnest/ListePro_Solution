@@ -24,7 +24,6 @@ class ProblemesController extends Controller
         ]);
 
         $problemes = new Problemes;
-        $problemes->titre =$request->titre;
         $problemes->description = $request->description;
         $problemes->solution_id = $request->solution_id;
         $problemes->types_id = $request->types_id;
