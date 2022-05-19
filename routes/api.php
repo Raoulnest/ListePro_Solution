@@ -18,12 +18,14 @@ Route::get ('ajout_problemes',[ProblemesController::class,'ajoutProblemes']);
 Route::get('problemes/{id}',[ProblemesController::class,'problemesParID']);
 Route::get('delete_problemes/{id}',[ProblemesController::class,'supprimer_probleme']);
 Route::get('update_problemes/{id}',[ProblemesController::class,'misAjourProblemes']);
+Route::get('listePro/{attribut}/{ordre}/{debut}/{limites}',[ResponsablesController::class,'listeParOrdreLimites']);
 
 Route::get('solutions',[SolutionsController::class,'listeSolutions']);
 Route::get ('ajout_solutions',[SolutionsController::class,'ajoutSolutions']);
 Route::get('solutions/{id}',[SolutionsController::class,'solutionsParID']);
 Route::get('delete_solutions/{id}',[SolutionsController::class,'supprimer_solution']);
 Route::get('update_solutions/{id}',[SolutionsController::class,'misAjourSolutions']);
+Route::get('listeSol/{attribut}/{ordre}/{debut}/{limites}',[ResponsablesController::class,'listeParOrdreLimites']);
 
 
 Route::get('types',[TypesController::class,'listeTypes']);
@@ -31,10 +33,13 @@ Route::get('ajout_types',[TypesController::class,'ajoutTypes']);
 Route::get('types/{id}',[TypesController::class,'typesParID']);
 Route::get('delete_types/{id}',[TypesController::class,'supprimer_type']);
 Route::get('update_types/{id}',[TypesController::class,'misAjourTypes']);
+Route::get('listeTypes/{attribut}/{ordre}/{debut}/{limites}',[ResponsablesController::class,'listeParOrdreLimites']);
 
 Route::get('agents',[ResponsablesController::class,'listeAgents']);
 Route::get('ajout_agents',[ResponsablesController::class,'ajoutAgents']);
 Route::get('agents/{id}',[ResponsablesController::class,'agentParID']);
 Route::get('delete_agents/{id}',[ResponsablesController::class,'supprimer_agent']);
 Route::get('update_agents/{id}',[ResponsablesController::class,'misAjourAgents']);
+Route::get('listeAgents/{attribut}/{ordre}/{debut}/{limites}',[ResponsablesController::class,'listeParOrdreLimites']);
+Route::get('listeAgentsT/{attribut}/{ordre}/{debut}/{limites}/{usersCount}',[ResponsablesController::class,'nbTotal']);
 
